@@ -30,6 +30,8 @@ module EY
         The uploaded cookbook will be run when executing 'recipes apply'.
       DESC
 
+      method_option :apply, :type => :boolean, 
+        :desc => "Apply/rebuild environment after uploading"
       method_option :environment, :type => :string, :aliases => %w(-e),
         :desc => "Environment that will receive the recipes"
       method_option :account, :type => :string, :aliases => %w(-c),
@@ -37,7 +39,13 @@ module EY
       def upload
         environment = fetch_environment(options[:environment], options[:account])
         environment.upload_recipes
-        EY.ui.say "Recipes uploaded successfully for #{environment.name}"
+        if options[:apply]
+          environment.run_custom_recipes
+          EY.ui.say "Recipes uploaded and applied successfully for #{environment.name}"
+        else
+          environment.upload_recipes
+          EY.ui.say "Recipes uploaded successfully for #{environment.name}"
+        end
       end
 
       desc "download [--environment ENVIRONMENT]",
