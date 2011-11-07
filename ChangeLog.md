@@ -2,7 +2,7 @@
 
 ## NEXT
 
-  *
+  * Revert confusing linking between dashboard "Migrate?" checkbox and CLI migrate defaults. Customers do not expect these to be linked.
 
 ## v1.4.3 (2011-11-01)
 
