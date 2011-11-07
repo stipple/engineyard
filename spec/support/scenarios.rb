@@ -84,11 +84,6 @@ module Scenario
           "instances_count" => 4,
           "app_server_stack_name" => "nginx_mongrel",
           "load_balancer_ip_address" => '127.0.0.0',
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
           "framework_env" => "production"}]
     end
 
@@ -170,11 +165,6 @@ module Scenario
           "id" => 200,
           "app_server_stack_name" => "nginx_mongrel",
           "load_balancer_ip_address" => '127.0.0.0',
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
           "framework_env" => "production"}]
     end
 
@@ -221,11 +211,6 @@ module Scenario
           "app_server_stack_name" => "nginx_mongrel",
           "load_balancer_ip_address" => '127.0.0.0',
           "framework_env" => "production",
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }, {
           "ssh_username" => "ham",
           "instances" => [],
@@ -234,11 +219,6 @@ module Scenario
           "app_server_stack_name" => "nginx_passenger",
           "load_balancer_ip_address" => '127.0.0.0',
           "id" => 202,
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }, {
           "ssh_username" => "hamburger",
           "instances" => [],
@@ -304,11 +284,6 @@ module Scenario
           "instances" => [railsapp_master],
           "app_server_stack_name" => "nginx_unicorn",
           "load_balancer_ip_address" => '127.0.0.0',
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }, {
           "id" => 439,
           "framework_env" => "production",
@@ -318,11 +293,6 @@ module Scenario
           "load_balancer_ip_address" => '127.0.0.0',
           "app_server_stack_name" => "nginx_mongrel",
           "instances" => [keycollector_master],
-          "deployment_configurations" => {
-            "keycollector" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }]
     end
   end # TwoApps
@@ -360,11 +330,6 @@ module Scenario
           "load_balancer_ip_address" => '127.0.0.0',
           "app_server_stack_name" => "nginx_mongrel",
           "framework_env" => "production",
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }, {
           "id" => 202,
           "ssh_username" => "ham",
@@ -379,11 +344,6 @@ module Scenario
           "load_balancer_ip_address" => '127.3.2.1',
           "app_server_stack_name" => "nginx_passenger",
           "framework_env" => "production",
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }, {
           "ssh_username" => "ham",
           "instances" => [{
@@ -398,11 +358,6 @@ module Scenario
           "id" => 204,
           "load_balancer_ip_address" => '127.0.0.2',
           "framework_env" => "production",
-          "deployment_configurations" => {
-            "rails232app" => {
-              'migrate' => {'command' => 'rake db:migrate', 'perform' => true}
-            }
-          },
         }]
     end
 
